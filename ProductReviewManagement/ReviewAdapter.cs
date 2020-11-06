@@ -37,7 +37,13 @@ namespace ProductReviewManagement
 
         public static Dictionary<int,int> GetReviewCountByProductId()
         {
-            return new Dictionary<int, int>();
+            ProductReviewData reviewData = new ProductReviewData();
+            Dictionary<int, int> reviewById = new Dictionary<int, int>();
+            var result = (from review in reviewData.ProductReviewList
+                          group review by review.ProductId)
+                         .ToDictionary(r => r.Key, r => r.Count());
+
+            return result;
         }
     }
 }
