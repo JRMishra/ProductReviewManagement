@@ -38,7 +38,6 @@ namespace ProductReviewManagement
         public static Dictionary<int,int> GetReviewCountByProductId()
         {
             ProductReviewData reviewData = new ProductReviewData();
-            Dictionary<int, int> reviewById = new Dictionary<int, int>();
             var result = (from review in reviewData.ProductReviewList
                           group review by review.ProductId)
                          .ToDictionary(r => r.Key, r => r.Count());
@@ -48,7 +47,12 @@ namespace ProductReviewManagement
 
         public static Dictionary<int, List<string>> GetAllIdAndReviews()
         {
-            return new Dictionary<int, List<string>>();
+            ProductReviewData reviewData = new ProductReviewData();
+            
+            var result = (from review in reviewData.ProductReviewList
+                          group review.Review by review.ProductId)
+                         .ToDictionary(r => r.Key, r => r.ToList() );
+            return result;
         }
     }
 }
