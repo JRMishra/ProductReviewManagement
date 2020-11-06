@@ -57,7 +57,12 @@ namespace ProductReviewManagement
 
         public static List<ProductReviewModel> GetAllReportExceptTops(int n)
         {
-            return new List<ProductReviewModel>();
+            ProductReviewData reviewData = new ProductReviewData();
+            var productReviews = (from review in reviewData.ProductReviewList
+                                 orderby review.Rating descending
+                                 select review).TakeLast(reviewData.ProductReviewList.Count- n);
+
+            return productReviews.ToList();
         }
     }
 }

@@ -91,6 +91,7 @@ namespace TestProductReviewManagement
             reviews = ReviewAdapter.GetAllReportExceptTops(5);
             //Assert
             Assert.AreEqual(20, reviews.Count);
+            Assert.AreNotEqual(3, reviews[0].ProductId);
         }
     }
 }
