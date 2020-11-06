@@ -16,7 +16,7 @@ namespace ProductReviewManagement
             productReviewList.Add(new ProductReviewModel { ProductId = 10, UserId = 6, Rating = 9, Review = "Great noise cancellation quality", isLike = true });
             productReviewList.Add(new ProductReviewModel { ProductId = 2, UserId = 2, Rating = 6, Review = "Need more colour choice", isLike = true });
         
-            productReviewList.Add(new ProductReviewModel { ProductId = 3, UserId = 6, Rating = 9, Review = "I recomend all to buy this", isLike = true });
+            productReviewList.Add(new ProductReviewModel { ProductId = 3, UserId = 6, Rating = 10, Review = "I recomend all to buy this", isLike = true });
             productReviewList.Add(new ProductReviewModel { ProductId = 7, UserId = 15, Rating = 5, Review = "Boycott... Boycott...", isLike = false });
             productReviewList.Add(new ProductReviewModel { ProductId = 8, UserId = 7, Rating = 8, Review = "Best piece for diwali gift", isLike = true });
             productReviewList.Add(new ProductReviewModel { ProductId = 4, UserId = 4, Rating = 5, Review = "Product is good but, service sucks", isLike = true });
