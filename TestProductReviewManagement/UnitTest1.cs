@@ -23,7 +23,7 @@ namespace TestProductReviewManagement
         {
             //Arrange
             ProductReviewData productReviewData = new ProductReviewData();
-            List<ProductReviewModel> topReviewIds = new List<ProductReviewModel>();
+            IList<ProductReviewModel> topReviewIds = new List<ProductReviewModel>();
             //Act
             topReviewIds = ReviewAdapter.GetTopThreeReview();
             //Assert
@@ -35,11 +35,12 @@ namespace TestProductReviewManagement
         {
             //Arrange
             ProductReviewData productReviewData = new ProductReviewData();
-            List<ProductReviewModel> topReviewIds = new List<ProductReviewModel>();
+            IList<ProductReviewModel> topReviewIds = new List<ProductReviewModel>();
             //Act
             topReviewIds = ReviewAdapter.GetTopThreeReview();
             //Assert
             Assert.AreEqual(10, topReviewIds[0].Rating);
+            Assert.AreEqual(3, topReviewIds[0].ProductId);
         }
     }
 }
