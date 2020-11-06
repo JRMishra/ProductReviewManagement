@@ -12,9 +12,9 @@ namespace TestProductReviewManagement
             //Arrange
             ProductReviewData productReviewData = new ProductReviewData();
             //Act
-            int actualCount = productReviewData.ReviewList.Count();
+            int actualCount = productReviewData.ProductReviewList.Count;
             //Assert
-            Assert.Equals(25, actualCount);
+            Assert.AreEqual(25, actualCount);
         }
     }
 }
