@@ -42,5 +42,17 @@ namespace TestProductReviewManagement
             Assert.AreEqual(10, topReviewIds[0].Rating);
             Assert.AreEqual(3, topReviewIds[0].ProductId);
         }
+
+        [TestMethod] 
+        public void GetReviews_RatingMoreThan3_ProductId3Or4Or9()
+        {
+            //Arrange
+            ProductReviewData productReviewData = new ProductReviewData();
+            IList<ProductReviewModel> reviews = new List<ProductReviewModel>();
+            //Act
+            reviews = ReviewAdapter.GetReviews_AboveSpecifiedRating_HavingGivenIds(3, 3, 4, 9);
+            //Assert
+            Assert.AreEqual(6, reviews.Count);
+        }
     }
 }

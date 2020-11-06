@@ -10,12 +10,16 @@ namespace ProductReviewManagement
         public static IList<ProductReviewModel> GetTopThreeReview()
         {
             ProductReviewData reviewData = new ProductReviewData();
-            //var productReviews = new List<ProductReviewModel>();
             var productReviews = from review in reviewData.ProductReviewList
                              orderby review.Rating descending
                              select review;
                             
             return productReviews.Take(3).ToList();
+        }
+
+        public static IList<ProductReviewModel> GetReviews_AboveSpecifiedRating_HavingGivenIds(int rating, params int[] ids)
+        {
+            return new List<ProductReviewModel>();
         }
     }
 }
