@@ -80,5 +80,17 @@ namespace TestProductReviewManagement
             Assert.AreEqual(10, reviews.Keys.Count);
             Assert.AreEqual(3, reviews[1].Count);
         }
+
+        [TestMethod]
+        public void GetAllReportExceptTop_ShouldReturnAll_ExceptSpecifiedNumberOfTopRecord()
+        {
+            //Arrange
+            ProductReviewData productReviewData = new ProductReviewData();
+           List<ProductReviewModel> reviews = new List<ProductReviewModel>();
+            //Act
+            reviews = ReviewAdapter.GetAllReportExceptTops(5);
+            //Assert
+            Assert.AreEqual(20, reviews.Count);
+        }
     }
 }

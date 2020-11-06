@@ -54,5 +54,10 @@ namespace ProductReviewManagement
                          .ToDictionary(r => r.Key, r => r.ToList() );
             return result;
         }
+
+        public static List<ProductReviewModel> GetAllReportExceptTops(int n)
+        {
+            return new List<ProductReviewModel>();
+        }
     }
 }
