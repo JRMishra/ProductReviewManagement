@@ -34,5 +34,10 @@ namespace ProductReviewManagement
             }
             return finalProductReview;
         }
+
+        public static Dictionary<int,int> GetReviewCountByProductId()
+        {
+            return new Dictionary<int, int>();
+        }
     }
 }

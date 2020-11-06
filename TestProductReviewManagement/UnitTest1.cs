@@ -54,5 +54,18 @@ namespace TestProductReviewManagement
             //Assert
             Assert.AreEqual(6, reviews.Count);
         }
+
+        [TestMethod]
+        public void GetReviewCount_ByProductId()
+        {
+            //Arrange
+            ProductReviewData productReviewData = new ProductReviewData();
+            Dictionary<int,int> reviews = new Dictionary<int, int>();
+            //Act
+            reviews = ReviewAdapter.GetReviewCountByProductId();
+            //Assert
+            Assert.AreEqual(3, reviews[1]);
+            Assert.AreEqual(1, reviews[9]);
+        }
     }
 }
