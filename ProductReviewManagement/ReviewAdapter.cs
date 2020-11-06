@@ -45,5 +45,10 @@ namespace ProductReviewManagement
 
             return result;
         }
+
+        public static Dictionary<int, List<string>> GetAllIdAndReviews()
+        {
+            return new Dictionary<int, List<string>>();
+        }
     }
 }
