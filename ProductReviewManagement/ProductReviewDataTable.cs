@@ -46,7 +46,7 @@ namespace ProductReviewManagement
             dataTableStorage.Rows.Add(1, 7, 9, "Really nice product", false);
             dataTableStorage.Rows.Add(10, 2, 5, "Not good at all", true);
             dataTableStorage.Rows.Add(2, 10, 7, "good quality product", true);
-            dataTableStorage.Rows.Add(10, 4, 9, "Best thing I bought in Puja deal", true);
+            dataTableStorage.Rows.Add(10, 4, 8, "Best thing I bought in Puja deal", true);
             dataTableStorage.Rows.Add(5, 9, 4, "All that glitters isn't gold", false);
 
         }
@@ -74,6 +74,11 @@ namespace ProductReviewManagement
                           where data.Field<string>("Review").Contains(strToMatch, StringComparison.OrdinalIgnoreCase)
                           select data).ToList();
             return result;
+        }
+
+        public List<DataRow> OrderedRecordsForGivenId(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

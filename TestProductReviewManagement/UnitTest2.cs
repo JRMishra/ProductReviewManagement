@@ -52,5 +52,16 @@ namespace TestProductReviewManagement
             //Assert
             Assert.AreEqual(3, result.Count);
         }
+
+        [TestMethod]
+        public void TestMethod_WhenCalledShould_RetrieveRecordsOrderedByRating()
+        {
+            //Arrange
+            ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
+            //Act
+            List<DataRow> result = productReviewDataTable.OrderedRecordsForGivenId(10);
+            //Assert
+            Assert.AreEqual("Great noise cancellation quality", result[0].Field<string>("Review"));
+        }
     }
 }
