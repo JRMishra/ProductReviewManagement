@@ -78,7 +78,11 @@ namespace ProductReviewManagement
 
         public List<DataRow> OrderedRecordsForGivenId(int id)
         {
-            throw new NotImplementedException();
+            var result = (from data in dataTableStorage.AsEnumerable()
+                          where data.Field<int>("ProductId").Equals(id)
+                          orderby data.Field<int>("Rating") descending
+                          select data).ToList();
+            return result;
         }
     }
 }
