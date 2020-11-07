@@ -51,6 +51,10 @@ namespace ProductReviewManagement
 
         }
 
+        /// <summary>
+        /// Retrieve records with IsLike as True
+        /// </summary>
+        /// <returns>List of data records</returns>
         public List<DataRow> RetrieveAllTrueIsLike()
         {
             List<DataRow> result = (from data in dataTableStorage.AsEnumerable()
@@ -59,6 +63,10 @@ namespace ProductReviewManagement
             return result;
         }
 
+        /// <summary>
+        /// Retrieve average rating for all products
+        /// </summary>
+        /// <returns>Dictionary: product id - key , average rating - value</returns>
         public Dictionary<int, double> AvgRatingOfProducts()
         {
             var result = (from data in dataTableStorage.AsEnumerable()
@@ -68,6 +76,11 @@ namespace ProductReviewManagement
             return result;
         }
 
+        /// <summary>
+        /// Retrieve records with specified keyword in review
+        /// </summary>
+        /// <param name="strToMatch">Keyword to match</param>
+        /// <returns>List of retrieved records</returns>
         public List<DataRow> FilterReviewsByKeyword(string strToMatch)
         {
             var result = (from data in dataTableStorage.AsEnumerable()
@@ -76,6 +89,11 @@ namespace ProductReviewManagement
             return result;
         }
 
+        /// <summary>
+        /// Retrieve records ordered by rating for given product id
+        /// </summary>
+        /// <param name="id">product id</param>
+        /// <returns>List of ordered records</returns>
         public List<DataRow> OrderedRecordsForGivenId(int id)
         {
             var result = (from data in dataTableStorage.AsEnumerable()

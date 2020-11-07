@@ -9,6 +9,10 @@ namespace TestProductReviewManagement
     [TestClass]
     public class UnitTest2
     {
+        /// <summary>
+        /// When product review table is created,
+        /// it should add 25 records to a data table
+        /// </summary>
         [TestMethod]
         public void ProductReviewDataTable_WhenCreated_ShouldAdd25Reviews()
         {
@@ -20,6 +24,9 @@ namespace TestProductReviewManagement
             Assert.AreEqual(25, actualCount);
         }
 
+        /// <summary>
+        /// Test method which returns all records with IsLike as true
+        /// </summary>
         [TestMethod]
         public void RetrieveAllTrueIsLike_ShouldReturn_RecordsWithIsLikeTrue()
         {
@@ -31,6 +38,9 @@ namespace TestProductReviewManagement
             Assert.AreEqual(18, actualCount);
         }
 
+        /// <summary>
+        /// Test method that returns average rating of products by product id
+        /// </summary>
         [TestMethod]
         public void Test_AvgRatingOfProductsMethod()
         { 
@@ -42,6 +52,9 @@ namespace TestProductReviewManagement
             Assert.AreEqual(7.33, Math.Round(result[1],2));
         }
 
+        /// <summary>
+        /// Test method that filters records by specific keyword in review
+        /// </summary>
         [TestMethod]
         public void Test_FilterReviewsByKeywordMethod()
         {
@@ -53,6 +66,10 @@ namespace TestProductReviewManagement
             Assert.AreEqual(3, result.Count);
         }
 
+        /// <summary>
+        /// Test method that returns
+        /// records ordered by rating for given product id
+        /// </summary>
         [TestMethod]
         public void TestMethod_WhenCalledShould_RetrieveRecordsOrderedByRating()
         {

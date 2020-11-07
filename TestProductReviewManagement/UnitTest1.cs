@@ -7,6 +7,9 @@ namespace TestProductReviewManagement
     [TestClass]
     public class UnitTest1
     {
+        /// <summary>
+        /// ProductReviewData Class should add 25 records when instansiated
+        /// </summary>
         [TestMethod]
         public void ProductReviewDataClass_WhenInstanciated_ShouldAdd25ReviewsToList()
         {
@@ -18,6 +21,9 @@ namespace TestProductReviewManagement
             Assert.AreEqual(25, actualCount);
         }
 
+        /// <summary>
+        /// Test method that should return top 3 records by rating
+        /// </summary>
         [TestMethod]
         public void GetTopThreeReview_WhenCalleded_ShouldReturnThreeReviews()
         {
@@ -30,6 +36,9 @@ namespace TestProductReviewManagement
             Assert.AreEqual(3,topReviewIds.Count);
         }
 
+        /// <summary>
+        /// Test TopThreeReview method should have top rated at first
+        /// </summary>
         [TestMethod]
         public void GetTopThreeReview_ShouldReturn_ThreeTopRatedReviews()
         {
@@ -43,6 +52,10 @@ namespace TestProductReviewManagement
             Assert.AreEqual(3, topReviewIds[0].ProductId);
         }
 
+        /// <summary>
+        /// Test method that have rating more than specified rating
+        /// having product id among specified ids
+        /// </summary>
         [TestMethod] 
         public void GetReviews_RatingMoreThan3_ProductId3Or4Or9()
         {
@@ -55,6 +68,9 @@ namespace TestProductReviewManagement
             Assert.AreEqual(6, reviews.Count);
         }
 
+        /// <summary>
+        /// Test method that should return count by product id
+        /// </summary>
         [TestMethod]
         public void GetReviewCount_ByProductId()
         {
@@ -68,6 +84,9 @@ namespace TestProductReviewManagement
             Assert.AreEqual(1, reviews[9]);
         }
 
+        /// <summary>
+        /// Test method that retrieve list of reviews by product Id
+        /// </summary>
         [TestMethod]
         public void GetAllIdAndReview_ShouldReturn_DictWithIdAndReviewList()
         {
@@ -81,6 +100,9 @@ namespace TestProductReviewManagement
             Assert.AreEqual(3, reviews[1].Count);
         }
 
+        /// <summary>
+        /// Test method that returns records except specified number of records from top 
+        /// </summary>
         [TestMethod]
         public void GetAllReportExceptTop_ShouldReturnAll_ExceptSpecifiedNumberOfTopRecord()
         {
