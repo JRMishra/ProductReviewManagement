@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace TestProductReviewManagement
 {
     [TestClass]
-    class UnitTest2
+    public class UnitTest2
     {
         [TestMethod]
         public void ProductReviewDataTable_WhenCreated_ShouldAdd25Reviews()
@@ -18,6 +18,5 @@ namespace TestProductReviewManagement
             //Assert
             Assert.AreEqual(25, actualCount);
         }
-
     }
 }
