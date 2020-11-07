@@ -37,7 +37,7 @@ namespace TestProductReviewManagement
             //Arrange
             ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
             //Act
-            Dictionary<int,decimal> result = productReviewDataTable.AvgRatingOfProducts();
+            Dictionary<int,double> result = productReviewDataTable.AvgRatingOfProducts();
             //Assert
             Assert.AreEqual(7.33, Math.Round(result[1],2));
         }

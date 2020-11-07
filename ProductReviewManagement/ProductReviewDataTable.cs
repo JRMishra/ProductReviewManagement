@@ -13,11 +13,11 @@ namespace ProductReviewManagement
 
         public ProductReviewDataTable()
         {
-            dataTableStorage.Columns.Add("ProductId");
-            dataTableStorage.Columns.Add("UserId");
-            dataTableStorage.Columns.Add("Rating");
-            dataTableStorage.Columns.Add("Review");
-            dataTableStorage.Columns.Add("IsLike");
+            dataTableStorage.Columns.Add("ProductId", typeof(int));
+            dataTableStorage.Columns.Add("UserId", typeof(int));
+            dataTableStorage.Columns.Add("Rating", typeof(int));
+            dataTableStorage.Columns.Add("Review", typeof(string));
+            dataTableStorage.Columns.Add("IsLike", typeof(bool));
 
             dataTableStorage.Rows.Add(1, 3, 7, "Loved it", true);
             dataTableStorage.Rows.Add(8, 8, 7, "Better than expectation", true);
@@ -59,9 +59,13 @@ namespace ProductReviewManagement
             return result;
         }
 
-        public Dictionary<int, decimal> AvgRatingOfProducts()
+        public Dictionary<int, double> AvgRatingOfProducts()
         {
-            throw new NotImplementedException();
+            var result = (from data in dataTableStorage.AsEnumerable()
+                          group data by data.Field<int>("ProductId"))
+                          .ToDictionary( d => d.Key, d => d.Average(x => x.Field<int>("Rating")));
+                          
+            return result;
         }
     }
 }
