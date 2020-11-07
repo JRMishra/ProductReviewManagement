@@ -53,8 +53,10 @@ namespace ProductReviewManagement
 
         public List<DataRow> RetrieveAllTrueIsLike()
         {
-            var result = dataTableStorage.Select().Where(d => d.Field<string>("IsLike").Equals(true));
-            return result.ToList();
+            List<DataRow> result = (from data in dataTableStorage.AsEnumerable()
+                                    where data.Field<bool>("IsLike") == true
+                                    select data).ToList();
+            return result;
         }
     }
 }

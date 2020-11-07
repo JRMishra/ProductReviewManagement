@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProductReviewManagement;
 using System.Collections.Generic;
-using System.Data;
+
 
 namespace TestProductReviewManagement
 {
@@ -18,6 +18,7 @@ namespace TestProductReviewManagement
             //Assert
             Assert.AreEqual(25, actualCount);
         }
+<<<<<<< HEAD
 
         [TestMethod]
         public void RetrieveAllTrueIsLike_ShouldReturn_RecordsWithIsLikeTrue()
@@ -29,5 +30,19 @@ namespace TestProductReviewManagement
             //Assert
             Assert.AreEqual(18, actualCount);
         }
+||||||| 057fa8d... [JR Mishra]Add. Testcases for ninth UC
+
+        [TestMethod]
+        public void RetrieveAllTrueIsLike_ShouldReturn_RecordsWithIsLikeTrue()
+        {
+            //Arrange
+            ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
+            //Act
+            List<DataRow> actualCount = productReviewDataTable.RetrieveAllTrueIsLike();
+            //Assert
+            Assert.AreEqual(25, actualCount);
+        }
+=======
+>>>>>>> parent of 057fa8d... [JR Mishra]Add. Testcases for ninth UC
     }
 }
