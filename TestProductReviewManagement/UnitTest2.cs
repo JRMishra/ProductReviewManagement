@@ -48,7 +48,7 @@ namespace TestProductReviewManagement
             //Arrange
             ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
             //Act
-            List<DataRow> result = productReviewDataTable.FilterReviewsByKeyword();
+            List<DataRow> result = productReviewDataTable.FilterReviewsByKeyword("nice");
             //Assert
             Assert.AreEqual(3, result.Count);
         }

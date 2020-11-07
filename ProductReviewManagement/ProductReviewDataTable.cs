@@ -68,9 +68,12 @@ namespace ProductReviewManagement
             return result;
         }
 
-        public List<DataRow> FilterReviewsByKeyword()
+        public List<DataRow> FilterReviewsByKeyword(string strToMatch)
         {
-            throw new NotImplementedException();
+            var result = (from data in dataTableStorage.AsEnumerable()
+                          where data.Field<string>("Review").Contains(strToMatch, StringComparison.OrdinalIgnoreCase)
+                          select data).ToList();
+            return result;
         }
     }
 }
