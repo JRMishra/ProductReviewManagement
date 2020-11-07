@@ -41,5 +41,16 @@ namespace TestProductReviewManagement
             //Assert
             Assert.AreEqual(7.33, Math.Round(result[1],2));
         }
+
+        [TestMethod]
+        public void Test_FilterReviewsByKeywordMethod()
+        {
+            //Arrange
+            ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
+            //Act
+            List<DataRow> result = productReviewDataTable.FilterReviewsByKeyword();
+            //Assert
+            Assert.AreEqual(3, result.Count);
+        }
     }
 }

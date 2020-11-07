@@ -28,10 +28,10 @@ namespace ProductReviewManagement
             dataTableStorage.Rows.Add(3, 6, 10, "I recomend all to buy this", true);
             dataTableStorage.Rows.Add(7, 15, 5, "Boycott... Boycott...", false);
             dataTableStorage.Rows.Add(8, 7, 8, "Best piece for diwali gift", true);
-            dataTableStorage.Rows.Add(4, 4, 5, "Product is good but, service sucks", true);
+            dataTableStorage.Rows.Add(4, 4, 5, "Product is really nice but, service sucks", true);
             dataTableStorage.Rows.Add(4, 15, 9, "Perfect for its purpose", true);
 
-            dataTableStorage.Rows.Add(1, 12, 6, "Great Features", true);
+            dataTableStorage.Rows.Add(1, 12, 6, "Nicely integrated Features", true);
             dataTableStorage.Rows.Add(5, 11, 7, "Best camera, worst Battery life", true);
             dataTableStorage.Rows.Add(6, 3, 6, "Got a different colour than what ordered", true);
             dataTableStorage.Rows.Add(6, 10, 9, "Worth selling my kidney", true);
@@ -43,7 +43,7 @@ namespace ProductReviewManagement
             dataTableStorage.Rows.Add(3, 2, 6, "It's heating a lot, rest all good", true);
             dataTableStorage.Rows.Add(4, 1, 8, "Great product, great support", true);
 
-            dataTableStorage.Rows.Add(1, 7, 9, "Really awsome product", false);
+            dataTableStorage.Rows.Add(1, 7, 9, "Really nice product", false);
             dataTableStorage.Rows.Add(10, 2, 5, "Not good at all", true);
             dataTableStorage.Rows.Add(2, 10, 7, "good quality product", true);
             dataTableStorage.Rows.Add(10, 4, 9, "Best thing I bought in Puja deal", true);
@@ -66,6 +66,11 @@ namespace ProductReviewManagement
                           .ToDictionary( d => d.Key, d => d.Average(x => x.Field<int>("Rating")));
                           
             return result;
+        }
+
+        public List<DataRow> FilterReviewsByKeyword()
+        {
+            throw new NotImplementedException();
         }
     }
 }
