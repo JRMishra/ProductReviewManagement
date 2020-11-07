@@ -49,5 +49,10 @@ namespace ProductReviewManagement
             dataTableStorage.Rows.Add(5, 9, 4, "All that glitters isn't gold", false);
 
         }
+
+        public List<DataRow> RetrieveAllTrueIsLike()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

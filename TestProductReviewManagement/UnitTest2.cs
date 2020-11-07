@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProductReviewManagement;
 using System.Collections.Generic;
-
+using System.Data;
 
 namespace TestProductReviewManagement
 {
@@ -15,6 +15,17 @@ namespace TestProductReviewManagement
             ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
             //Act
             int actualCount = productReviewDataTable.dataTableStorage.Rows.Count;
+            //Assert
+            Assert.AreEqual(25, actualCount);
+        }
+
+        [TestMethod]
+        public void RetrieveAllTrueIsLike_ShouldReturn_RecordsWithIsLikeTrue()
+        {
+            //Arrange
+            ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
+            //Act
+            List<DataRow> actualCount = productReviewDataTable.RetrieveAllTrueIsLike();
             //Assert
             Assert.AreEqual(25, actualCount);
         }
