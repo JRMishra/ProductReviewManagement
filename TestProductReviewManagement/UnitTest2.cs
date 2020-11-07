@@ -25,9 +25,9 @@ namespace TestProductReviewManagement
             //Arrange
             ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
             //Act
-            List<DataRow> actualCount = productReviewDataTable.RetrieveAllTrueIsLike();
+            int actualCount = productReviewDataTable.RetrieveAllTrueIsLike().Count;
             //Assert
-            Assert.AreEqual(25, actualCount);
+            Assert.AreEqual(18, actualCount);
         }
     }
 }

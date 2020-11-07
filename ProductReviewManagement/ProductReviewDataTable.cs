@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -52,7 +53,8 @@ namespace ProductReviewManagement
 
         public List<DataRow> RetrieveAllTrueIsLike()
         {
-            throw new NotImplementedException();
+            var result = dataTableStorage.Select().Where(d => d.Field<string>("IsLike").Equals(true));
+            return result.ToList();
         }
     }
 }
