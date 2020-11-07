@@ -58,5 +58,10 @@ namespace ProductReviewManagement
                                     select data).ToList();
             return result;
         }
+
+        public Dictionary<int, decimal> AvgRatingOfProducts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

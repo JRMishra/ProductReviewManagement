@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProductReviewManagement;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -28,6 +29,17 @@ namespace TestProductReviewManagement
             int actualCount = productReviewDataTable.RetrieveAllTrueIsLike().Count;
             //Assert
             Assert.AreEqual(18, actualCount);
+        }
+
+        [TestMethod]
+        public void Test_AvgRatingOfProductsMethod()
+        { 
+            //Arrange
+            ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
+            //Act
+            Dictionary<int,decimal> result = productReviewDataTable.AvgRatingOfProducts();
+            //Assert
+            Assert.AreEqual(7.33, Math.Round(result[1],2));
         }
     }
 }
